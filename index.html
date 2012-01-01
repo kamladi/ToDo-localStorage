@@ -19,15 +19,20 @@
 	<!--Home Page-->
 	<div id="home" data-role="page" data-theme="c">
 		<header data-role="header" data-theme="a">
+			<a href="#options" data-role="button" data-icon="gear" data-iconpos="left">Options</a>
 			<h1>To Do!</h1>
-			<a href="#options" class="ui-btn-right" data-role="button" data-icon="gear" data-iconpos="left">Options</a>
+			<a href="#add" data-role="button" data-theme="e" data-rel="dialog" data-transition="pop" data-icon="plus" data-iconpos="right">Add a new task</a>
 		</header>
-		<a href="#add" data-role="button" data-theme="e" data-rel="dialog" data-transition="pop" data-icon="plus" data-iconpos="left">Add</a>
-		<ul id="list" data-role="listview">
-			<li><h3>sample task</h3><p>sample task description</p></li>
-			<li><h3>sample task</h3><p>sample task description</p></li>
-			<li><h3>sample task</h3><p>sample task description</p></li>
-		</ul>
+		<section data-role="content">
+			<p id="instructions">Swipe a task to mark it as complete</p>
+			<ul id="list" data-role="listview" data-inset="true" data-theme="d">
+				<li><h3>sample task</h3><p>sample task description</p></li>
+				<li><h3>sample task</h3><p>sample task description</p></li>
+				<li><h3>sample task</h3><p>sample task description</p></li>
+			</ul>
+		</section>
+		<footer data-role="footer" data-position="fixed" data-theme="a">
+			<p>Created by <a href="http://kedar-amladi.com">Kedar Amladi</a>
 	</div>
 	
 	<!--Add Task Page-->
@@ -58,10 +63,8 @@
 			<h2>Options</h2>
 		</header>
 		<div data-role="content">
-			<a href="#delete-confirm" data-rel="dialog" data-transition="slidedown" data-role="button" data-icon="delete" data-iconpos="left">Delete All Tasks</a>
-			<a href="#purge-confirm" data-rel="dialog" data-transition="slidedown" data-role="button" data-icon="refresh" data-iconpos="left">Purge Completed Tasks</a>
-			<br />
-			<p>Copyright &copy; 2011 Kedar Amladi. <a href="http://kedar-amladi.com" rel="external">Visit site</a>.</p>
+			<a href="#delete-confirm" data-rel="dialog" data-transition="pop" data-role="button" data-icon="delete" data-iconpos="left">Delete All Tasks</a>
+			<a href="#purge-confirm" data-rel="dialog" data-transition="pop" data-role="button" data-icon="refresh" data-iconpos="left">Purge Completed Tasks</a>
 		</div>
 	</div>
 	
