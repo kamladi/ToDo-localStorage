@@ -1,0 +1,29 @@
+.done {
+	margin: 0px 5px;
+	color: green;
+	font-weight: bold;
+}
+
+.complete {
+	text-decoration: line-through;
+	color: #666;
+}
+
+#new-task-text {
+	width: 98.5% !important;
+}
+
+label.ui-input-text {
+	//vertical-align: middle;
+	display: inline-block;
+	width: 20%;
+	margin: 0 2% 0 0;
+}
+
+input#checkbox-urgent {
+	width: 60%;
+}
+
+.urgent {
+	color: red !important;
+}
