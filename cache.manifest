@@ -11,10 +11,6 @@ images/icons-18-white.png
 images/icons-36-black.png
 images/icons-36-white.png
 
-#add-to-homescreen files
-add-to-homescreen/src/add2home.js
-add-to-homescreen/style/add2home.css
-
 #my files
 custom.js
 to-do.png
