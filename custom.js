@@ -18,7 +18,7 @@ $(function() {
 	$('#add form input[autofocus]').trigger('focus');
 	
 	//when 'save' button is clicked
-	$('#add-task').click(function(event) {
+	$('#add-task').bind('tap', function(event) {
 		var newTitle = $('input#title').val();
 			if(newTitle == '') {
 				alert('Please enter a title for the task');

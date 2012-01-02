@@ -31,6 +31,10 @@ input#checkbox-urgent {
 	display: block;
 	text-align: center;
 }
+#home footer p {
+	margin: 5px;
+	font-size: 12px;
+}
 #home footer a {
 	color: #fff;
 }
