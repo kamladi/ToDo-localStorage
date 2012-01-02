@@ -1,16 +1,14 @@
 CACHE MANIFEST
 
-#jquery libraries
+index.html
+custom.js
+to-do.png
 jquery-1.6.2.min.js
 jquerymobile/jquery.mobile-1.0b1.min.css
 jquerymobile/jquery.mobile-1.0b1.min.js
-images/ajax-loader.png
-images/icon-search-black.png
-images/icons-18-black.png
-images/icons-18-white.png
-images/icons-36-black.png
-images/icons-36-white.png
-
-#my files
-custom.js
-to-do.png
+jquerymobile/images/ajax-loader.png
+jquerymobile/images/icon-search-black.png
+jquerymobile/images/icons-18-black.png
+jquerymobile/images/icons-18-white.png
+jquerymobile/images/icons-36-black.png
+jquerymobile/images/icons-36-white.png
