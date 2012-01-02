@@ -1,3 +1,10 @@
+/*
+TODO:
+	- before rendering list, prepend all urgent tasks to the front,
+		and append completed tasks to the end
+	- implement HTML5 draggable feature (SCHWEET)
+*/
+
 /* Constants */
 var list;
 var taskObject;
