@@ -1,4 +1,4 @@
-<html>
+<html manifest="cache.manifest">
 <head>
 	<title>ToDo List using HTML5 localStorage</title>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -8,10 +8,22 @@
 	<!--CSS-->
 	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0b1.min.css" />
 	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="add-to-homescreen/style/add2home.css">
 	<!--JS-->
 	<script src="jquery-1.6.2.min.js"></script>
 	<script src="jquerymobile/jquery.mobile-1.0b1.min.js"></script>
-	<script src="custom.js"></script>
+	<script type="text/javascript">
+		//CUSTOM SETTINGS FOR ADD-TO-HOMESCREEN SCRIPT
+		var addToHomeConfig = {
+			animationIn: 'bubble',
+			animationOut: 'drop',
+			lifespan:5000,
+			expire:2,
+			touchIcon:true,
+		};
+	</script>
+	<script type="application/javascript" src="add-to-homescreen/src/add2home.js"></script>
+	<script src="app.js"></script>
 
 </head>
 <body>
