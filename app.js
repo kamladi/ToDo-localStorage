@@ -12,14 +12,33 @@ $(function() {
 	renderList();
 	
 	//When task is swiped...
-	$('#list li').live('swiperight', function() {
-		var item = $(this);
+	$('#list li').live('swiperight', function(event) {
+		var item = $(event.currentTarget);
+		var parent = item.parent();
+		console.log(parent);
 		var id = item.attr('id');
 		console.log('swiped: "' + taskObject[id].title + '"');
-		toggleCompleted(id);
-		item.toggleClass('complete');
+		//toggleCompleted(id);
+		if(item.hasClass('incomplete')) {
+			item.fadeOut('slow', function() {
+				item.addClass('complete')
+					.removeClass('incomplete')
+					.appendTo(parent)
+					.fadeIn('slow');
+			});
+			taskObject[id].status = 'complete';
+		}
+		else {
+			item.fadeOut('slow', function() {
+				item.addClass('incomplete')
+					.removeClass('complete')
+					.insertBefore('.none.incomplete:first')
+					.fadeIn('slow');
+			});
+			taskObject[id].status = 'incomplete';
+		}
+		saveData();
 	   });
-
 	
 	//trigger autofocus for 'add' dialog
 	$('#add form input[autofocus]').trigger('focus');
@@ -127,6 +146,8 @@ function renderList() {
 			'<h3>'+title+'</h3>'+
 			'<p>'+description+'</p></li>'
 		);
+		$('#list li.complete').appendTo('#list');
+		$('#list li.urgent.incomplete').prependTo('#list');
 	}
 	$('#home').page();
 	$('#list').listview('refresh');
@@ -170,13 +191,17 @@ function toggleCompleted(id) {
 		return false;
 	}
 	var task = taskObject[id];
+	console.log('swiped task: ');
+	console.log(task);
+	console.log(task.status);
+	//TODO: splice swiped task and append/prepend to list
 	if(task.status == 'incomplete') {
 		task.status = 'complete';
-		console.log('task '+task.id+'marked as complete');
+		console.log('task '+id+'marked as complete');
 	}
 	else { //if tasks.status == 'complete'
 		task.status = 'incomplete';
-		console.log('task '+task.id+'marked as incomplete');
+		console.log('task '+id+' marked as incomplete');
 	}
 	saveData();
 }

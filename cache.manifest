@@ -1,14 +1,16 @@
 CACHE MANIFEST
 
 index.html
-custom.js
 to-do.png
+style.css
+add-to-homescreen/style/add2home.css
+add-to-homescreen/src/add2home.js
 jquery-1.6.2.min.js
-jquerymobile/jquery.mobile-1.0b1.min.css
-jquerymobile/jquery.mobile-1.0b1.min.js
+jquerymobile/jquery.mobile-1.0.min.css
+jquerymobile/jquery.mobile-1.0.min.js
 jquerymobile/images/ajax-loader.png
-jquerymobile/images/icon-search-black.png
 jquerymobile/images/icons-18-black.png
 jquerymobile/images/icons-18-white.png
 jquerymobile/images/icons-36-black.png
 jquerymobile/images/icons-36-white.png
+app.js

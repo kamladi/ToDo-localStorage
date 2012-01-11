@@ -1,4 +1,5 @@
-<html manifest="cache.manifest">
+<!--<html manifest="cache.manifest">-->
+<html>
 <head>
 	<title>ToDo!</title>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -6,12 +7,12 @@
 	<link rel="apple-touch-icon-precomposed" href="to-do.png"/>
 	<meta name="viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = no" />
 	<!--CSS-->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-	<link rel="stylesheet" href="style.css" />
-	<link rel="stylesheet" href="add-to-homescreen/style/add2home.css">
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0.min.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<link rel="stylesheet" href="add-to-homescreen/style/add2home.css" type="text/css">
 	<!--JS-->
 	<script src="jquery-1.6.2.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script src="jquerymobile/jquery.mobile-1.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		//CUSTOM SETTINGS FOR ADD-TO-HOMESCREEN SCRIPT
 		var addToHomeConfig = {
@@ -37,7 +38,7 @@
 		</header>
 		<section data-role="content">
 			<p id="instructions">Swipe a task to mark it as complete</p>
-			<ul id="list" data-role="listview" data-inset="true" data-theme="d">
+			<ul id="list" data-role="listview" data-inset="false" data-theme="d">
 				<li><h3>sample task</h3><p>sample task description</p></li>
 				<li><h3>sample task</h3><p>sample task description</p></li>
 				<li><h3>sample task</h3><p>sample task description</p></li>
