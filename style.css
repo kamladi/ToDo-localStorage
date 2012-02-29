@@ -6,7 +6,7 @@
 
 .complete {
 	text-decoration: line-through;
-	color: #666;
+	color: #666 !important;
 }
 
 #new-task-text {

@@ -17,8 +17,8 @@ $(function() {
 		var parent = item.parent();
 		console.log(parent);
 		var id = item.attr('id');
-		console.log('swiped: "' + taskObject[id].title + '"');
-		//toggleCompleted(id);
+		console.log('swiped:');
+		console.log(item);
 		if(item.hasClass('incomplete')) {
 			item.fadeOut('slow', function() {
 				item.addClass('complete')
@@ -31,9 +31,13 @@ $(function() {
 		else {
 			item.fadeOut('slow', function() {
 				item.addClass('incomplete')
-					.removeClass('complete')
-					.insertBefore('.none.incomplete:first')
-					.fadeIn('slow');
+					.removeClass('complete');
+				if(($(".urgent.incomplete").length > 0) && item.hasClass('none')) {
+					item.insertAfter('.urgent.incomplete').fadeIn('slow');
+				}
+				else {
+					item.prependTo('ul#list').fadeIn('slow');
+				}
 			});
 			taskObject[id].status = 'incomplete';
 		}
@@ -185,6 +189,7 @@ function resetSampleData() {
 * else mark as incomplete
 * then save data
 */
+/*
 function toggleCompleted(id) {
 	if(taskObject == null) {
 		console.log('Error: task data not defined');
@@ -205,6 +210,7 @@ function toggleCompleted(id) {
 	}
 	saveData();
 }
+*/
 
 /*
 * transfer incomplete tasks to new array, 
