@@ -185,34 +185,6 @@ function resetSampleData() {
 }
 
 /*
-* if tasks with given id is incomplete, mark as complete
-* else mark as incomplete
-* then save data
-*/
-/*
-function toggleCompleted(id) {
-	if(taskObject == null) {
-		console.log('Error: task data not defined');
-		return false;
-	}
-	var task = taskObject[id];
-	console.log('swiped task: ');
-	console.log(task);
-	console.log(task.status);
-	//TODO: splice swiped task and append/prepend to list
-	if(task.status == 'incomplete') {
-		task.status = 'complete';
-		console.log('task '+id+'marked as complete');
-	}
-	else { //if tasks.status == 'complete'
-		task.status = 'incomplete';
-		console.log('task '+id+' marked as incomplete');
-	}
-	saveData();
-}
-*/
-
-/*
 * transfer incomplete tasks to new array, 
 * and set taskObject to new array
 */
