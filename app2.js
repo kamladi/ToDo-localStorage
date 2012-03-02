@@ -17,7 +17,7 @@ var App = {
 	},
 	
 	bindFunctions: function() {
-		$('#list li').live('swiperight', App.taskSwiped);
+		this.list.delegate('li', 'swiperight', App.taskSwiped);
 		$('#add-task').on('click tap', App.addTask);
 		$('#delete-confirm .btn-confirm').on('tap', App.reset);
 		$('#purge-confirm .btn-confirm').on('tap', App.purgeCompleted);
