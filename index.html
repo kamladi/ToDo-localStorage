@@ -32,7 +32,7 @@
 	<!--Home Page-->
 	<div id="home" data-role="page" data-theme="c">
 		<header data-role="header" data-theme="a">
-			<a href="#options" data-role="button" data-icon="gear" data-iconpos="left">Options</a>
+			<a href="#options" data-role="button" data-icon="gear" data-iconpos="left" data-directions="reverse">Options</a>
 			<h1>To Do!</h1>
 			<a href="#add" data-role="button" data-theme="e" data-rel="dialog" data-transition="pop" data-icon="plus" data-iconpos="right">New Task</a>
 		</header>
@@ -56,7 +56,7 @@
 		<section data-role="content">
 			<form>
 				<label for="title">To Do: </label>
-				<input type="text" id="title" name="title"/>
+				<input type="text" id="title" required="required" name="title"/>
 
 				<label for="description">Details: </label>
 				<textarea id="description" name="description"></textarea>
@@ -64,7 +64,7 @@
 				<input type="checkbox" name="checkbox-urgent" id="checkbox-urgent" value="urgent"/>
 				<label for="checkbox-urgent">Urgent</label>
 
-				<a href="#home" id="add-task" data-role="button">Add</a>
+				<button tyype="submit" value="Add" href="#home" id="add-task" data-role="button">Add</button>
 			</form>
 		</section>
 	</div>

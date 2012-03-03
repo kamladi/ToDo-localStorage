@@ -17,12 +17,16 @@ var App = {
 	},
 	
 	bindFunctions: function() {
-		this.list.delegate('li', 'swiperight', App.taskSwiped);
-		$('#add-task').on('click tap', App.addTask);
+		this.list.delegate('li', 'swiperight swipeleft', App.taskSwiped);
+		//$('#add-task').on('click tap', App.addTask);
+		$('#add form').submit(App.addTask);
 		$('#delete-confirm .btn-confirm').on('tap', App.reset);
 		$('#purge-confirm .btn-confirm').on('tap', App.purgeCompleted);
 		//trigger autofocus for 'add' dialog
 		$('#add form input[autofocus]').trigger('focus');
+		this.list.on('swipe', function(event) {
+			console.log(event);
+		});
 	},
 	
 	/*
@@ -123,12 +127,15 @@ var App = {
 		App.saveData();
 	},
 
+	/*
+	* event handler for adding a new task
+	*/
 	addTask: function(event) {
 		var newTitle = $('input#title').val();
-			if(newTitle == '') {
-				alert('Please enter a title for the task');
-				return false;
-			}
+		if(newTitle === '') {
+			alert('Please enter a title for the task');
+			return false;
+		}
 		var newPriority = 'none';
 		if( $('input#checkbox-urgent ').is(':checked') ) {
 			newPriority = 'urgent';
@@ -145,19 +152,22 @@ var App = {
 			status: 'incomplete'
 		}
 		//Prepend new task to array -- the unshift method prepends, push appends
-		this.taskObject.unshift(newTask);
+		App.taskObject.unshift(newTask);
 		console.log('new task added to taskObject');
+		
 		//save updated object to localStorage
-		this.saveData();
+		App.saveData();
 		
 		//reload task list
-		this.renderList();
-		$.mobile.changePage( this.homePage );
+		App.renderList();
+		$.mobile.changePage( App.homePage );
 		
 		//reset form
 		$('#title').val("");
 		$('#description').val("");
 		$("input#checkbox-urgent").attr("checked",false).checkboxradio("refresh");
+		
+		return false;
 	},
 
 	reset: function(event) {

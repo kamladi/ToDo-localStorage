@@ -48,12 +48,12 @@ $(function() {
 	$('#add form input[autofocus]').trigger('focus');
 	
 	//when 'save' button is clicked
-	$('#add-task').bind('tap', function(event) {
+	$('#add form').submit( function(event) {
 		var newTitle = $('input#title').val();
-			if(newTitle == '') {
-				alert('Please enter a title for the task');
-				return false;
-			}
+		if(newTitle == '') {
+			alert('Please enter a title for the task');
+			return false;
+		}
 		var newPriority = 'none';
 		if( $('input#checkbox-urgent ').is(':checked') ) {
 			newPriority = 'urgent';
@@ -72,6 +72,7 @@ $(function() {
 		//Prepend new task to array -- the unshift method prepends, push appends
 		taskObject.unshift(newTask);
 		console.log('new task added to taskObject');
+		
 		//save updated object to localStorage
 		saveData();
 		
@@ -83,6 +84,8 @@ $(function() {
 		$('#title').val("");
 		$('#description').val("");
 		$("input#checkbox-urgent").attr("checked",false).checkboxradio("refresh");
+		
+		return false;
 	});
 	
 	//Confirmation for 'DELETE'
