@@ -18,7 +18,9 @@ var App = {
 	
 	bindFunctions: function() {
 		this.list.delegate('li', 'swiperight swipeleft', App.taskSwiped);
-		//$('#add-task').on('click tap', App.addTask);
+		$('#add').on('pageshow', function(e, data) {
+			$('#add form input#title').trigger('focus');
+		});
 		$('#add form').submit(App.addTask);
 		$('#delete-confirm .btn-confirm').on('tap', App.reset);
 		$('#purge-confirm .btn-confirm').on('tap', App.purgeCompleted);
