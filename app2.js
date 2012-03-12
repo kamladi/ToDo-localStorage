@@ -160,7 +160,10 @@ var App = {
 		
 		//reload task list
 		App.renderList();
-		$.mobile.changePage( App.homePage );
+		$.mobile.changePage(App.homePage, {
+			transition: 'pop',
+			reverse: true
+		});
 		
 		//reset form
 		$('#title').val("");
