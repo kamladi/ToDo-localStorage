@@ -3,11 +3,11 @@ CACHE MANIFEST
 index.html
 to-do.png
 style.css
-app.js
+app2.js
 add-to-homescreen/style/add2home.css
 add-to-homescreen/src/add2home.js
 jquerymobile/jquery.mobile-1.0.min.css
-jquery-1.6.2.min.js
+jquery-1.7.1.min.js
 jquerymobile/jquery.mobile-1.0.min.js
 jquerymobile/images/ajax-loader.png
 jquerymobile/images/icons-18-black.png

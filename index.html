@@ -1,11 +1,11 @@
-<!--<html manifest="cache.manifest">-->
-<html>
+<!DOCTYPE html>
+<html manifest="cache.manifest">
 <head>
 	<title>ToDo!</title>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<!--><link rel="apple-touch-icon-precomposed" href="to-do.png"/>-->
-	<meta name="viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = no" />
+	<link rel="apple-touch-icon-precomposed" href="to-do.png"/>
+	<meta name="viewport" content = "initial-scale = 1, maximum-scale = 1, user-scalable = no" />
 	<!--CSS-->
 	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0.min.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css"/>
@@ -30,9 +30,9 @@
 <body>
 	
 	<!--Home Page-->
-	<div id="home" data-role="page" data-theme="c">
-		<header data-role="header" data-theme="a">
-			<a href="#options" data-role="button" data-icon="gear" data-iconpos="left" data-directions="reverse">Options</a>
+	<div id="home" data-role="page" data-theme="b">
+		<header data-role="header" data-theme="b">
+			<a href="#options" data-role="button" data-icon="gear" data-iconpos="left" data-transition="flip">Options</a>
 			<h1>To Do!</h1>
 			<a href="#add" data-role="button" data-theme="e" data-rel="dialog" data-transition="pop" data-icon="plus" data-iconpos="right">New Task</a>
 		</header>
@@ -43,9 +43,7 @@
 				<li><h3>sample task</h3><p>sample task description</p></li>
 				<li><h3>sample task</h3><p>sample task description</p></li>
 			</ul>
-		</section>
-		<footer data-role="footer" data-position="fixed" data-theme="a">
-			<p>Created by <a href="http://kedar-amladi.com">Kedar Amladi</a>
+		</section>			
 	</div>
 	
 	<!--Add Task Page-->
@@ -64,25 +62,27 @@
 				<input type="checkbox" name="checkbox-urgent" id="checkbox-urgent" value="urgent"/>
 				<label for="checkbox-urgent">Urgent</label>
 
-				<button tyype="submit" value="Add" href="#home" id="add-task" data-role="button">Add</button>
+				<button type="submit" value="Add" href="#home" id="add-task" data-role="button">Add</button>
 			</form>
 		</section>
 	</div>
 	
 	<!--Options Page-->
 	<div id="options" data-role="page" data-theme="c">
-		<header data-role="header" data-theme="a">
+		<header data-role="header" data-theme="b">
 			<a href="#home" data-rel="back" data-icon="back">Back</a>
 			<h2>Options</h2>
 		</header>
 		<div data-role="content">
 			<a href="#delete-confirm" data-rel="dialog" data-transition="pop" data-role="button" data-icon="delete" data-iconpos="left">Delete All Tasks</a>
 			<a href="#purge-confirm" data-rel="dialog" data-transition="pop" data-role="button" data-icon="refresh" data-iconpos="left">Purge Completed Tasks</a>
+			<br />
+			<p style="text-align: center">Created by <a href="http://kedar-amladi.com">Kedar Amladi</a></p>
 		</div>
 	</div>
 	
 	<!--Confirmation page for 'Delete'-->
-	<div id="delete-confirm" data-role="page" data-theme="a">
+	<div id="delete-confirm" data-role="page" data-theme="b">
 		<div data-role="content">
 			<h3>Clear all of your tasks?</h3>
 			<div class="ui-grid-a">
@@ -90,14 +90,14 @@
 					<button class="btn-confirm" data-theme="b">Yes</button>
 				</div>
 				<div class="ui-block-b">
-					<a href="#home" id="cancel" data-role="button">No</a>
+					<a href="#options" id="cancel" data-rel="back" data-role="button">No</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	
 	<!--Confirmation page for 'Purge'-->
-	<div id="purge-confirm" data-role="page" data-theme="a">
+	<div id="purge-confirm" data-role="page" data-theme="b">
 		<div data-role="content">
 			<h3>Purge your list of Completed tasks?</h3>
 			<div class="ui-grid-a">
@@ -105,7 +105,7 @@
 					<button class="btn-confirm" data-theme="b">Yes</button>
 				</div>
 				<div class="ui-block-b">
-					<a href="#home" id="cancel" data-role="button">No</a>
+					<a href="#options" id="cancel" data-rel="back" data-role="button">No</a>
 				</div>
 			</div>
 		</div>
