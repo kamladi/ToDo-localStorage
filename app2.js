@@ -18,6 +18,7 @@ var App = {
 	
 	bindFunctions: function() {
 		this.list.delegate('li', 'swiperight swipeleft', App.taskSwiped);
+		this.list.delegate('li', 'keyup', App.updateTask);
 		$('#add').on('pageshow', function(e, data) {
 			$('#add form input#title').trigger('focus');
 		});
@@ -76,8 +77,8 @@ var App = {
 			var listClass= priority + ' ' + status;
 			this.list.append(
 				'<li id="'+x+'" class="'+listClass+'">'+
-				'<h3>'+title+'</h3>'+
-				'<p>'+description+'</p></li>'
+				'<h3 contenteditable>'+title+'</h3>'+
+				'<p contenteditable>'+description+'</p></li>'
 			);
 			$('#list li.complete').appendTo('#list');
 			$('#list li.urgent.incomplete').prependTo('#list');
@@ -173,6 +174,25 @@ var App = {
 		$("input#checkbox-urgent").attr("checked",false).checkboxradio("refresh");
 		
 		return false;
+	},
+	
+	updateTask: function(event) {
+		console.log('updating task...');
+		var id = event.currentTarget.id;
+		var newText = event.originalEvent.target.innerText;
+		//if user cleared text, replace with empty spaces to
+			//make it easier to edit again
+		if(newText === "") {
+			newText = "       ";
+		}
+		//save text to appropriate place in taskObject
+		if(event.originalEvent.target.tagName === "H3") {
+			App.taskObject[id].title = newText;
+		}
+		else if(event.originalEvent.target.tagName === "P") {
+			App.taskObject[id].description = newText;
+		}
+		App.saveData();
 	},
 
 	reset: function(event) {
